@@ -1,5 +1,6 @@
+require 'auth'
 class ApplicationController < ActionController::API
-  
+
 
   def authenticate_user
     render json:{error: "Unauthorized User"} unless signed_in?
