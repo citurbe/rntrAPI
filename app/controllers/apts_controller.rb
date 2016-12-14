@@ -3,7 +3,7 @@ require_relative '../adapters/distance_adapter.rb'
 require_relative '../adapters/map_adapter.rb'
 require_relative '../adapters/school_adapter.rb'
 require_relative '../adapters/yelp_adapter.rb'
-require 'byebug'
+
 class AptsController < ApplicationController
 
   def show

@@ -1,5 +1,5 @@
 
-require 'byebug'
+
 require_relative '../adapters/yelp_adapter.rb'
 
 class AmenitiesController < ApplicationController
