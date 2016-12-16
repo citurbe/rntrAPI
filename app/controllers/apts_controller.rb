@@ -33,6 +33,10 @@ class AptsController < ApplicationController
         }
       },
       apartment_score: score.round,
+      commute_score: commute_score(apartment.apt_commute.duration.to_i),
+      crime_score: crime_score(apartment.apt_crime.felonies),
+      amenities_score: amenities_score(apartment),
+      school_score: school_score(apartment.apt_school.a_schools),
       id: apartment.id,
       address: apartment.address,
       user_id: apartment.user.id,
@@ -89,6 +93,10 @@ class AptsController < ApplicationController
          }
        },
        apartment_score: score.round,
+       commute_score: commute_score(apartment.apt_commute.duration.to_i),
+       crime_score: crime_score(apartment.apt_crime.felonies),
+       amenities_score: amenities_score(apartment),
+       school_score: school_score(apartment.apt_school.a_schools),
        id: apartment.id,
        address: apartment.address,
        user_id: user.id,
