@@ -5,7 +5,7 @@ class SchoolAdapter
   include HTTParty
 
   def self.get_schools(zipcode)
-    self.get("https://data.cityofnewyork.us/resource/9pyc-nsiu.json?zip=#{zipcode}")
+    self.get("https://data.cityofnewyork.us/resource/r2nx-nhxe.json?location_1_zip=#{zipcode}")
   end
 
   def self.filter_schools(zipcode, grade)
@@ -31,7 +31,7 @@ class SchoolAdapter
 
   def self.get_lat_lon
     list = filter_schools.map {|school| school.fetch('dbn')}.join("','")
-    self.get("https://data.cityofnewyork.us/resource/9pyc-nsiu.json?zip=#{@zipcode}&$where=ats_system_code in ('#{list}')")
+    self.get("https://data.cityofnewyork.us/resource/r2nx-nhxe.json?location_1_zip=#{@zipcode}&$where=ats_system_code in ('#{list}')")
   end
 
   def self.get_school_markers(zipcode: '10004', grade: 'F')
